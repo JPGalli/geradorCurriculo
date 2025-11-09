@@ -1,0 +1,210 @@
+:root {
+  --bg: #f7f7f8;
+  --card: #fff;
+  --accent: rgb(0, 123, 255);
+  --muted: #666;
+  --shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  --radius: 10px;
+}
+
+/* resetar, boa prática */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  font-family: "Roboto", sans-serif;
+  background: var(--bg)
+    url("https://www.transparenttextures.com/patterns/cubes.png");
+  color: #222;
+  min-height: 100%;
+}
+
+/*  menu.php  */
+.navbar {
+  background: var(--accent);
+  color: #fff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+  box-shadow: var(--shadow);
+}
+.nav-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 20px;
+}
+.nav-logo {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+.nav-links {
+  display: flex;
+  gap: 20px;
+}
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: opacity 0.2s ease;
+}
+.nav-links a:hover {
+  opacity: 0.8;
+}
+.nav-toggle {
+  display: none;
+  background: transparent;
+  color: #fff;
+  border: none;
+  font-size: 26px;
+  cursor: pointer;
+}
+
+/* corpo  */
+.container {
+  max-width: 900px;
+  margin: 100px auto 40px;
+  padding: 0 20px;
+}
+.card {
+  background: var(--card);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 20px;
+  margin-bottom: 16px;
+}
+h1,
+h2 {
+  margin-bottom: 10px;
+}
+label {
+  display: block;
+  margin-top: 10px;
+}
+input,
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+.actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+  flex-wrap: wrap;
+}
+button,
+.btn-small {
+  border: none;
+  background: var(--accent);
+  color: #fff;
+  border-radius: 6px;
+  padding: 10px 14px;
+  cursor: pointer;
+  font-weight: 500;
+}
+.btn-small {
+  background: #ccc;
+  color: #222;
+  text-decoration: none;
+  display: inline-block;
+}
+button[type="reset"] {
+  background: #777;
+}
+
+/* "formularios" a serem preenchidos */
+.exp-item,
+.form-item {
+  background: #fafafa;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 12px;
+  margin-top: 10px;
+  position: relative;
+}
+
+/* btn remover */
+.exp-item button,
+.form-item button {
+  background: #e74c3c; /* vermelho */
+  color: #000; /* texto preto */
+  border: none;
+  border-radius: 6px;
+  padding: 6px 10px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: all 0.2s ease;
+}
+.exp-item button:hover,
+.form-item button:hover {
+  background: #c0392b; /* vermelho escuro */
+  color: #fff; /* texto branco no hover */
+}
+
+/* btn imprimir/baixar */
+.print-btn {
+  background: #3498db; /* azul suave */
+  color: #fff;
+}
+.print-btn:hover {
+  background: #217dbb;
+}
+
+#addExp,
+#addFor {
+  margin-top: 10px;
+  background: #0b5;
+}
+
+/* footer */
+footer {
+  text-align: center;
+  padding: 20px;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+/* responsividade */
+@media (max-width: 700px) {
+  .nav-links {
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background: var(--accent);
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    padding: 10px 20px;
+    display: none;
+  }
+  .nav-links.open {
+    display: flex;
+  }
+  .nav-toggle {
+    display: block;
+  }
+  .actions {
+    flex-direction: column;
+  }
+  input,
+  textarea,
+  button {
+    font-size: 1rem;
+  }
+  .exp-item,
+  .form-item {
+    padding: 10px;
+  }
+}
